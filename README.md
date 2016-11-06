@@ -26,6 +26,21 @@ This project was originally built to work with Jackson and RestEasy, but you can
 
 ## Configuration
 
+Download the source and install in your local repository using Maven
+
+```
+mvn install
+```
+
+Add the dependency to your pom file:
+```xml
+<dependency>
+    <groupId>org.nutcore</groupId>
+    <artifactId>orientdb-javaee</artifactId>
+    <version>1.0</version>
+</dependency>
+```
+
 Configure a provider that supports the conversion of a OrientDB proxed object to a stream.
 
 ```java
