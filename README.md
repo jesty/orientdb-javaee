@@ -51,7 +51,7 @@ deployment.setProviderClasses(Arrays.asList(OrientDBJacksonProvider.class.getNam
 Add the servlet Filter in order to handle the database connection. Furthermore the database connection is also stored in a thread local, so you can inject or retrieve it using OrientDBUtil.getDatabase() static method.
 
 ```java
-.addFilter(new FilterInfo("/api", OrientDBFilter.class))
+deploymentInfo.addFilter(new FilterInfo("/api", OrientDBFilter.class))
 .addFilterUrlMapping("/api", "/*", DispatcherType.REQUEST);
 ```
 
@@ -61,4 +61,17 @@ orientdb.entitymanager.packagename=com.example.domain
 orientdb.database.password=root
 orientdb.database.username=root
 orientdb.database.url=remote:localhost/yourdatabase
+```
+
+If you want to run OrientDB Server as embedded you must add this servlet listener:
+
+```java
+deploymentInfo.addListener(Servlets.listener(OrientDBServletContextListener.class))
+
+```
+
+Create a db.config.xml file (in example folder there is a sample) in your classpath and use `plocal` protocol to connect to the database:
+
+```
+orientdb.database.url=plocal:your_database_folder/exampledb
 ```

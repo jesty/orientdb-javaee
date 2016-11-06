@@ -21,7 +21,7 @@ public class OrientDBFactory
     @PostConstruct
     public void init()
     {
-        InputStream inputStream  = OrientDBFilter.class.getClassLoader().getResourceAsStream("application.properties");
+        InputStream inputStream  = OrientDBFilter.class.getClassLoader().getResourceAsStream("orientdb.properties");
         Properties properties = new Properties();
         try
         {
