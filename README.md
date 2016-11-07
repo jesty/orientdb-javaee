@@ -4,9 +4,13 @@ This project is an utilities set to use OrientDB in a JavaEE environment. Basica
 
 * Injecting the database instance.
 * Handle the database connection for request.
-* Yo avoid serialization issues it automatically detach the objects when return from a resource method (annotated wiht @GET, @POST, etc...) 
+* To avoid serialization issues it automatically detach the objects when return from a resource method (annotated wiht @GET, @POST, etc...)
 
-For example, you can inject the database instance in your classes:
+This project was originally built to work with Jackson and RestEasy, but you can adapt to your needing.
+
+If you want to create an application using this library you can use https://github.com/jesty/orientdb-microservices
+
+Using this library, you can inject the database instance in your classes:
 
 ```java
 @Inject
@@ -21,8 +25,6 @@ public List<Chat> getAll()
   return db.command(new OSQLSynchQuery<Chat>("select * from Example")).execute();
 }
 ```
-
-This project was originally built to work with Jackson and RestEasy, but you can adapt to your needing.
 
 ## Configuration
 
