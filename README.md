@@ -37,7 +37,7 @@ mvn install
 Add the dependency to your pom file:
 ```xml
 <dependency>
-    <groupId>org.nutcore</groupId>
+    <groupId>com.nutcore</groupId>
     <artifactId>orientdb-javaee</artifactId>
     <version>1.0</version>
 </dependency>
